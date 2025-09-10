@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Typography,
@@ -24,14 +24,14 @@ import InfoIcon from '@mui/icons-material/Info';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-// Simulated useFormStatus hook
-const useFormStatus = () => {
-  // In a real React application, this would be the actual hook
-  // For this demo, we'll simulate it with local state
-  const [isPending, setIsPending] = useState(false);
-  
-  return { pending: isPending, data: null, method: 'POST', action: '/api/submit' };
-};
+// Simulated useFormStatus hook - commented out to avoid unused variable
+// const useFormStatus = () => {
+//   // In a real React application, this would be the actual hook
+//   // For this demo, we'll simulate it with local state
+//   const [isPending, setIsPending] = useState(false);
+//   
+//   return { pending: isPending, data: null, method: 'POST', action: '/api/submit' };
+// };
 
 // Simulated form submission function
 const simulateFormSubmission = async (data: any, delay: number, shouldFail: boolean) => {

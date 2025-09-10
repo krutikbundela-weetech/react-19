@@ -11,6 +11,7 @@ import {
   Drawer,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   ListItemIcon,
   Divider,
@@ -184,32 +185,32 @@ const Layout: React.FC = () => {
                         .includes(searchQuery.toLowerCase())
                   )
                   .map((item) => (
-                    <ListItem
-                      button
-                      key={item.name}
-                      onClick={() => {
-                        navigate(item.path);
-                        setMobileOpen(false);
-                      }}
-                      selected={location.pathname === item.path}
-                      sx={{
-                        borderRadius: 2,
-                        mb: 0.5,
-                        "&.Mui-selected": {
-                          bgcolor: "rgba(25, 118, 210, 0.08)",
-                          "&:hover": {
-                            bgcolor: "rgba(25, 118, 210, 0.12)",
+                    <ListItem key={item.name}>
+                      <ListItemButton
+                        selected={location.pathname === item.path}
+                        onClick={() => {
+                          navigate(item.path);
+                          setMobileOpen(false);
+                        }}
+                        sx={{
+                          borderRadius: 2,
+                          mb: 0.5,
+                          "&.Mui-selected": {
+                            bgcolor: "rgba(25, 118, 210, 0.08)",
+                            "&:hover": {
+                              bgcolor: "rgba(25, 118, 210, 0.12)",
+                            },
                           },
-                        },
-                      }}
-                    >
-                      <ListItemIcon sx={{ minWidth: 36 }}>
-                        {item.icon}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={item.name}
-                        slotProps={{ primary: { fontSize: "0.875rem" } }}
-                      />
+                        }}
+                      >
+                        <ListItemIcon sx={{ minWidth: 36 }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.name}
+                          slotProps={{ primary: { fontSize: "0.875rem" } }}
+                        />
+                      </ListItemButton>
                     </ListItem>
                   ))}
               </List>

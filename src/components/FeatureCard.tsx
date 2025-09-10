@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button, CardActions, Box, Avatar } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'; // useTransition
 import CodeIcon from '@mui/icons-material/Code'; // Default
@@ -10,7 +10,6 @@ import SpeedIcon from '@mui/icons-material/Speed'; // useOptimistic
 import LinkIcon from '@mui/icons-material/Link'; // Refs as Props
 import LoopIcon from '@mui/icons-material/Loop'; // use() with Promises
 import MemoryIcon from '@mui/icons-material/Memory'; // useActionState
-import { useTheme } from '@mui/material/styles';
 
 interface FeatureCardProps {
   id?: string;
@@ -21,7 +20,6 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ id, title, description, navigateTo }) => {
   const navigate = useNavigate();
-  const theme = useTheme();
   const featureId = id || title.toLowerCase().replace(/\s+/g, '-');
   
   // Function to get icon based on feature ID

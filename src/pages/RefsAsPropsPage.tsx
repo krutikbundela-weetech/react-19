@@ -1,14 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import {
   Box, Typography, Paper, Button, TextField, Stack,
-  Divider, Card, CardContent, Slider, Switch, FormControlLabel,
-  Alert, Chip
+  Slider, Switch, FormControlLabel,
+  Alert
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import CodeIcon from '@mui/icons-material/Code';
 
 // Child component that receives a ref directly as a prop
-const FancyInput = ({ inputRef, label, ...props }: { inputRef: React.RefObject<HTMLInputElement>, label: string, [key: string]: any }) => {
+const FancyInput = ({ inputRef, label, ...props }: { inputRef: React.RefObject<HTMLInputElement | null>, label: string, [key: string]: unknown }) => {
   return (
     <Box sx={{ mb: 2 }}>
       <Typography variant="subtitle2" gutterBottom>
@@ -26,8 +26,8 @@ const FancyInput = ({ inputRef, label, ...props }: { inputRef: React.RefObject<H
 };
 
 // Animation component that uses refs for DOM manipulation
-const AnimatedBox = ({ boxRef, color, animationSpeed }: { 
-  boxRef: React.RefObject<HTMLDivElement>, 
+const AnimatedBox = ({ boxRef, color, animationSpeed }: {
+  boxRef: React.RefObject<HTMLDivElement | null>,
   color: string,
   animationSpeed: number
 }) => {
@@ -93,7 +93,7 @@ const RefsAsPropsPage: React.FC = () => {
   }, []);
   
   // Handle focusing different inputs
-  const focusInput = (ref: React.RefObject<HTMLInputElement>) => {
+  const focusInput = (ref: React.RefObject<HTMLInputElement | null>) => {
     if (ref.current) {
       ref.current.focus();
     }
