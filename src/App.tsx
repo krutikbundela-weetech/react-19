@@ -9,6 +9,7 @@ import UseOptimisticPage from "./pages/UseOptimisticPage";
 import RefsAsPropsPage from "./pages/RefsAsPropsPage";
 import UseWithPromisesPage from "./pages/UseWithPromisesPage";
 import UseWithContextPage from "./pages/UseWithContextPage";
+import React19FeaturesPage from "./pages/React19FeaturesPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="refs-as-props" element={<RefsAsPropsPage />} />
         <Route path="use-with-promises" element={<UseWithPromisesPage />} />
         <Route path="use-with-context" element={<UseWithContextPage />} />
+        <Route path="react-19-features" element={<React19FeaturesPage />} />
       </Route>
     </Routes>
   );

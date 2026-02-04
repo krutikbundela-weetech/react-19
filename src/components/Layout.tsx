@@ -102,6 +102,11 @@ const Layout: React.FC = () => {
           path: "/use-with-context",
           icon: <CodeIcon />,
         },
+        {
+          name: "Meta Data",
+          path: "/react-19-features",
+          icon: <CodeIcon />,
+        },
       ],
     },
   ];
